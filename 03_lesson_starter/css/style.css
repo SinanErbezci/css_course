@@ -2,4 +2,19 @@ body {
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
+    background-color: papayawhip;
+    /* background: ... is the samethign with background-color */
+    color: rgb(255,0,0);
+    /* color -> font color. */
+
 }
+
+p {
+    color: rgba(0,0,0,0.5);
+    /* alpha channel -> transperency. value between 0 - 1 */
+}
+
+.two {
+    color: #00FF00;
+}
+/* coolors.co */

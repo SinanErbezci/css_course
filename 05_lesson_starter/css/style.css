@@ -1,25 +1,40 @@
+/* Sometimes you want to reset the default values
+that are set by the browser. Thats why you do the following: */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* default is content-box. Content-box don't include
+    border size and padding. When you set border-box, content plus border
+    is taken into consideration. */
 }
 
-body {
-    min-height: 100vh;
-}
-
-h1 {
+.container {
     border: 2px dashed red;
-    width: 50%;
-    font-size: 3rem;
-    padding: 0.5em;
+    border-top: 5px solid;
+    border-right: 5px dotted;
+    font-size: 1.5rem;
+    margin: 1.5em 2em 2em;
+    /* top right bottom left */
+    /* 1em = font-size of the element. Which is 1.5rem in here */
+    /* width: 400px; */
+    /* border-box -> content+border+padding = 400 */
+    padding: 1em;
+    outline: 5px solid purple;
+    /* outline doesnt take space. Just alter the border. */
+    outline-offset: -5px; 
+    /* negative value makes the outline inside. */
 }
 
-main {
-    font-size: 2rem;
-}
-
-p {
-    font-size: 2rem;
-    width: 40ch;
+.circle {
+    margin: 3rem auto;
+    /* auto sets it horizantally center of the parent */
+    background-color: gold;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50px;
+    outline: 2px solid red;
+    outline-offset: 0.25rem;
 }

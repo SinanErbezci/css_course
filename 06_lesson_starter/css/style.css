@@ -1,0 +1,29 @@
+body {
+    padding: 10%;
+    font-size: 2rem;
+    font-family:'Courier New', Courier, monospace;
+    /* If browser cant display courier new, then it can
+    display fallback values. First courier than monospace */
+}
+
+p {
+    text-decoration: underline;
+    /* overline, line-through, none, etc */
+    text-transform: capitalize;
+    /* lowercase, uppercase etc */
+    text-align: justify;
+    /* right */
+    text-indent: 2em;
+    /* first line indention */
+    line-height: 1.5;
+    /* letter-spacing: 0.25em; */
+    /* word-spacing: 0.5em; */
+    font-weight: normal;
+    /* Boldness. default around 300-400 */
+    font-style: italic;
+    /* oblique(stronger italic */
+
+}
+
+/* mdn for tutorials */
+/* google fonts. You need to import first.*/

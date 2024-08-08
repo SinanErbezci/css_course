@@ -1,0 +1,45 @@
+/* Absolute units (1cm,1px etc) Most commonly used
+is px. */
+/* Default font-size:16px generally. Set by the browser. */
+/* Generally you use relative units. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overriding the default values. */
+}   
+
+h1 {
+    border: 2px dashed red;
+    width: 50%;
+    /* It takes the value from parent element.
+    In this case it's header element. */
+    font-size: 3rem;
+    padding: 0.5em;
+}
+
+body {
+    /* body vertical length grows as new elements are created. */
+    /* but you can specify otherwise */
+    min-height: 100vh;
+    /* specified to full page */
+}
+main {
+    width: 50vw;
+    /* vw -> view-port width. You can also use percentage. */
+    font-size: 2rem;
+    /* rem -> font size of the root element. */
+    /* 2rem -> 2*16px = 32px */
+}
+p {
+    font-size: 2em;
+    /* em -> font size the parent element. */
+    /* 32*2 = 64px */
+    width: 40ch; 
+    /* one lines cant extend 40 charachter length.
+    It wraps. */
+}
+
+/* dev tools. user agent stylesheet means the values
+that are set by the browser. */
