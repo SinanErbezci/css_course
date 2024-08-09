@@ -17,6 +17,7 @@ body {
   width: 75vw;
   height: 85vh;
   margin: 40px auto;
+  position: relative;
 }
 
 .inner-container {
@@ -31,4 +32,90 @@ body {
   height: 150px;
   color: #fff;
   padding: 1rem;
+}
+
+.absolute {
+  background-color: blue;
+  position: absolute;
+  /* All elements are set to "static" by default. */
+  top: 0px;
+  left: 0px;
+  /* left: -10000px; this have the same effect disappering things.*/
+  /* It moves all the way to the top of the document if it doesnt have releative position of any parent.
+  Any parent(or grandparent) has relative property then it's position becomes relative to that. 
+  If more than one parents have relative property then closest parent becomes relative */
+}
+
+.relative {
+  background-color: red;
+  position: relative;
+  top: 100px;
+  left: 100px;
+  /* It will position itself to the parent without need position:relative property */
+}
+
+.fixed {
+  background-color: green;
+  position: fixed;
+  top: 100px;
+  /* respects to the document not to any parent. */
+  /* And if you scroll down or up, it will still stay at that position. */
+}
+
+.sticky {
+  background-color: black;
+  position: sticky;
+  top: 0;
+  /* when you scroll down it stays at the position(at 0) momentarily then it will move normally. */
+}
+
+/* If two elements colide with each other, the later one in the html file will show up on the front  */
+/* But if you specify otherwise, you can do it with css. */
+
+/* Second part */
+/* --------------- */
+
+section {
+  height: 100vw;
+}
+
+.blue { background-color: blue;}
+.red { background-color: red;}
+.green { background-color: green;}
+
+header, footer {
+  color: white;
+  text-align: center;
+  height: 100px;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  font-size: 5rem;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  background-color: black;
+  width: 100%;
+  font-size: 3rem;
+}
+
+a:visited {
+  color: white;
+}
+
+html { scroll-behavior: smooth;}
+.social {
+  background-color: royalblue;
+  color: white;
+  font-size: inherit;
+  padding: 1rem;
+  position: fixed;
+  top:30%;
+  left:0;
+  z-index: 1; 
+  /* always on top */
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
   margin: 0;
@@ -17,13 +17,51 @@ body {
   min-height: 400px;
   margin-inline: auto;
   border: 1px solid #000;
+  display: flex;
+  justify-content: space-evenly; 
+  /* default is "flex-start". space-between -> no space start and end.
+  space-evenly-> same amount of space everywhere */
+  align-items: center;
+  /* vertically aligning. If you change flex-direction it becomes horizantally*/
+  /* flex-direction: column; */
+  /* default is row. other options: row-reverse...*/
+  flex-wrap: wrap;
+  /* if you shrink the viewport it wraps. */
+  /* flex-flow: row wrap; samethings in one line */
+  align-content: space-evenly;
+  /* alings the rows. */  
 } 
 
 .box {
-  min-width: 100px;
-  min-height: 100px;
+  /* min-width: 100px; */
+  height: 100px;
   background-color: #000;
   color: #fff;
   font-size: 2rem;
   padding: 0.5rem;
+
+  /* flex items */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* flex-basis: 100px; */
+  /* similiar to min-width */
+  flex-grow: 1;
+  /* to fill the page, specifying how much they grow */
+  /* flex-shrink: 1; */
+  /* samething but for the shrinking. You can shrink below the basis */
+  flex: 1 1 40%;
+  /* grow shrink basis */
 }
+
+.box:nth-child(2) {
+  flex-grow: 2;
+  /* in this case, it doesnt grow exactly two times. because we
+  set basis to 1. That means first element have to be minimum 100px */
+  order: 4;
+  /* if order of the item is highest it goes to the end.
+  default 0. */
+}
+
+/* flexbox froggy */

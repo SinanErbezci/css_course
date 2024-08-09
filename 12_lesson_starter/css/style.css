@@ -4,3 +4,44 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
 }
+
+.columns {
+  columns: 4 250px;
+  /* column-count: 4;
+  column-width: 250px;  same thing with above*/
+  /* this way width is set default and doesnt change based on viewport */
+  /* and that means column count can go lower (but no higher) */
+  column-rule: 3px solid  #333;
+  column-gap: 3rem;
+}
+
+.columns p {
+  margin-top: 0;
+}
+
+.columns h2 {
+  margin-top: 0;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  break-inside: avoid;
+  /* this line prevents the header element to split into 2 columns. */
+  /* break-before: column; */
+  /* this will make sure header always stay at the top. But it can result unwanted output. Best to avoid*/
+
+}
+
+.columns .quote {
+  margin-top: 2rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #333;
+  column-span: all;
+  /* expends to all columns. */
+}
+/* unicode-table -> unicode chracaters */
+/* specificity Calculator  */
+.nowrap {
+  white-space: nowrap;
+  /* We specified that portion of the "p" should not wrap */
+}

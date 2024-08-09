@@ -9,8 +9,37 @@
 body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-auto-rows: 75px auto 75px;
+  grid-template-areas:
+    "hd hd hd hd hd hd hd hd hd"
+    "mn mn mn mn mn mn mn sb sb"
+    "ft ft ft ft ft ft ft ft ft";
+  /* naming your gird elements. */
+  gap:1rem;
 }
 
+.el{
+  background-color: rebeccapurple;
+  color:white;
+  display: grid;
+  place-content: center;
+}
+
+.header {
+  grid-area: hd;
+  /* giving grid name */
+}
+
+.sidebar {
+  grid-area: sb;
+  background-color: blue;
+}
+
+.footer {
+  grid-area: ft;
+}
 .box {
   background-color: #000;
   color: #fff;
@@ -18,7 +47,36 @@ body {
   padding: 0.5rem;
 }
 
+.container {
+  grid-area: mn;
+  display: grid;
+  /* grid-auto-flow: row; */
+  grid-template-columns: 200px 1fr 1fr;
+  /* repeat(4, 1fr) 4 columns with each of them 1fr*/
+  /* 3 columns with given width */
+  /* fr -> fraction units. Use all the avaible space and divides into fractions */
+  grid-auto-rows: minmax(150px,auto);
+  /* row height. minmax -> first value is min other is max */
+  gap: 1rem;
+  /* you can do it also rows. */
+}
 
+.box:first-child {
+  background-color: blue;
+  /* grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3; */
+  grid-column: 1 / 4;
+  grid-row: 1 / 3;
 
-
-
+  display: grid;
+  place-content: center;
+  /* justify + align -> place-content */
+}
+.box:nth-child(2) {
+  background-color: purple;
+  grid-column: 1 / 5;
+  grid-row: 3 / 4;
+}
+/* inspect -> layout -> grid */

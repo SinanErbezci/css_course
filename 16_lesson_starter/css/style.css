@@ -5,12 +5,38 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* image is inline element by default. 
+but most cases you dont want that because it can given unwanted space*/
+img {
+  display: block;
+}
 
 body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
 }
 
+.profile-pic-figure {
+  width: 35%;
+}
+
+.profile-pic-figure img {
+  width: 100%;
+  height: auto;
+  min-width: 100px;
+  border: 5px double gray;
+  border-radius: 50%;
+}
+.example {
+  margin-top: 1rem;
+  padding-left: 20px;
+  border: 1px solid red;
+}
+.example img {
+  width: 25%;
+  height: auto;
+  /* this way image becomes responsive. */
+}
 
 
 

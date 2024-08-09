@@ -4,3 +4,37 @@ body {
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
 }
+
+.block {
+  width: 15vw;
+  height: 15vw;
+  /* we used viewport unit rather than percentage because we want to make a square */
+  background-color: black;
+  color: white;
+  padding: 1rem;  
+}
+/* Float elements are not exactly in the flow of the page. So be careful */
+.left {
+  float: left;
+  margin-right: 1rem;
+  /* If you create margins for the "p" it doesnt consider the float element. */
+}
+
+.right {
+  float: right;
+  margin-left: 1rem;
+}
+
+.clear {
+  clear: both;
+}
+
+section {
+  background-color: bisque;
+  border: 1px solid #333;
+  padding: 1rem;
+  /* overflow: auto; */
+  /* overflow used for extanding the section to include the floating eleement. */
+  /* but more modern way of doing this is the following: */
+  display: flow-root;
+}
