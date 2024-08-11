@@ -52,14 +52,14 @@ nav {
   display: flex;
   justify-content: space-evenly;
 }
-
-nav a,
-nav a:visited {
+/* any-link -> a:visited, a:link */
+nav a:any-link {
   color: #000;
 }
 
-nav a:hover,
-nav a:focus {
+/* :is -> its shortcut. Rather writing nav a:hover, nav a:focus */
+/* :is can modify some specifitiy. :where does the samething but doesnt modify specifity. */
+nav :is(a:hover,a:focus) {
   color: hsla(0, 0%, 20%, 0.6);
 }
 
@@ -89,6 +89,10 @@ footer {
   align-items: center;
 }
 
+/* :target -> whoever is selected you can modify it. */
+.card:target {
+  border: 2px solid rebeccapurple;
+}
 .card figure {
   display: flex;
   flex-flow: column nowrap;
@@ -99,11 +103,43 @@ footer {
   border-radius: 50%;
 }
 
+/* any image with alt attribute */
+/* :not() -> img:not([alt]) images with not alt attribute */
+.card img[alt] {
+  border: 10px solid red;
+}
+
+.card img
 .card figcaption {
   font-weight: bolder;
   font-size: 2rem;
   margin: 1rem;
   text-align: center;
+}
+
+.card figcaption::after {
+  content: ' hello';
+  /* It  just adds some content after caption. But it doesnt included in the document */
+}
+
+.card p {
+  position: relative;
+}
+
+/* ::first-letter */
+.card p::before {
+  content: open-quote;
+  font-size: 3em;
+  position: absolute;
+  top: -0.25em;
+  left: -0.5em;
+}
+.card p::after {
+  content: close-quote;
+  font-size: 3em;
+  position: absolute;
+  top: -0.25em;
+  right: -0.5em;
 }
 
 /* || SMALL */

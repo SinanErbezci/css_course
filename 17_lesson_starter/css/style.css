@@ -11,4 +11,94 @@
 body {
   font: 1.5rem "Nunito", sans-serif;
   min-height: 100vh;
+
+  background-color: #475569;
+  background-image: radial-gradient(whitesmoke, #475569);
+  /* radial gradient starts from center */
+  display: flex;
+  flex-direction: column;
+}
+
+header,nav, main, footer {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 100%;
+  text-align: center;
+}
+
+header, footer {
+  position: sticky;
+  background-color: #1E293B;
+  color: whitesmoke;
+}
+
+header {
+  top: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  bottom: 0;
+}
+/* Syntax:
+@media media type and (condition:breakpoint) {
+  // CSS Rules
+} */
+
+/* mobile first desing.
+We design from smallest to largest. */
+
+/* orientation:landscape -> turning your phone */
+/* min-aspect-ration: 16/9 etc */
+/* small  */
+@media screen and (min-width: 576px){
+  /* from 576px applies these changes. */
+  body{
+    background-color: green;
+    background-image: radial-gradient(whitesmoke, green);
+  }
+
+}
+
+/* medium */
+@media screen and (min-width: 768px){
+  /* from 576px applies these changes. */
+  body{
+    background-color: gold;
+    background-image: radial-gradient(whitesmoke, gold);
+  } 
+}
+
+/* large */
+@media screen and (min-width: 992px){
+  /* from 576px applies these changes. */
+  body{
+    background-color: firebrick;
+    background-image: radial-gradient(whitesmoke, firebrick);
+  }
+}
+
+/* x-large */
+@media screen and (min-width: 1200px){
+  /* from 576px applies these changes. */
+  body{
+    background-color: rebeccapurple;
+    background-image: radial-gradient(whitesmoke, rebeccapurple);
+  }
+}
+
+/* mobile device landscape */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+  /* from 576px applies these changes. */
+  body{
+    background-color: dodgerblue;
+    background-image: radial-gradient(whitesmoke, dodgerblue);
+  }
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+  nav{display: none;}
 }
