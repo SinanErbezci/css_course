@@ -33,3 +33,68 @@ div {
   display: grid;
   place-content: center;
 }
+
+div:first-child {
+  background-color: dodgerblue;
+  /* transform: translateX(50%);  */
+  /* translateX -> moves the element. Negative value moves to the left */
+  /* transform: rotateX(180deg); */
+  /* it rotates from the top to bottom */
+  /* scaleX -> it grows on x-axis */
+  /* skewX -> leaning effect. */
+}
+
+div:nth-child(2) {
+  background-color: yellow;
+  /* transform: translateY(2rem); */
+  /* transform: rotateY(180deg); */
+  /* left to right */
+}
+
+div:last-child {
+  background-color: green;
+  /* transform: translate(100%, -2rem); */
+  /* first one x second y */
+  /* transform: rotate(90deg); */
+  /* rotates clockwise */
+}
+
+div:hover {
+  background-color: midnightblue;
+  /* transition-property: background-color, transform;
+  transition-duration: 2s;
+  transition-delay: 0.5s; */
+  /* transition-timing-function: ease-in; */
+  transition: all 2s ease-in-out 0.5s;
+}
+
+div:last-child:hover {
+  transform: rotate(180deg);
+}
+
+.animate {
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 5;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  /* ending state. In default it goes to starting state */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(600px) rotate(180deg);
+  }
+  66% {
+    transform: translateX(-600px) rotate(-180deg);
+  }
+  100% {
+    transform: translateX(0);
+    background-color: purple;
+  }
+}

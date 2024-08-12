@@ -7,6 +7,29 @@
   box-sizing: border-box;
 }
 
+/* Variables */
+:root {
+  /* Font */
+  --FF: "Nunito", sans-serif;
+  --FS: 1.5rem;
+  --FS-XL: 3rem;
+  /* everything inherits from this. */
+  /* color */
+  --BGCOLOR: #475569;
+  --ALTBGCOLOR: #1e293b;
+  --RADIAL-COLOR: whitesmoke;
+  --LIGHT-COLOR: whitesmoke;
+  /* --<name> */
+  /* when you use it -> var(--<variablname>) */
+}
+
+/* Creating dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --BGCOLOR: black;
+    --ALTBGCOLOR: #333;
+  }
+}
 img {
   display: block;
   max-width: 100%;
@@ -24,10 +47,10 @@ html {
 }
 
 body {
-  font: 1.5rem "Nunito", sans-serif;
+  font: var(--FS) var(--FF);
   min-height: 100vh;
-  background-color: #475569;
-  background-image: radial-gradient(whitesmoke, #475569);
+  background-color: var(--BGCOLOR);
+  background-image: radial-gradient( var(--RADIAL-COLOR), var(--BGCOLOR));
   display: flex;
   flex-direction: column;
 }
@@ -35,7 +58,7 @@ body {
 header,
 footer {
   position: sticky;
-  background-color: #1e293b;
+  background-color: var(--ALTBGCOLOR);
   color: whitesmoke;
   text-align: center;
 }
@@ -51,6 +74,7 @@ nav {
   font-weight: bolder;
   display: flex;
   justify-content: space-evenly;
+  /* box-shadow: ... */
 }
 /* any-link -> a:visited, a:link */
 nav a:any-link {
