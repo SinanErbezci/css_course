@@ -39,13 +39,17 @@ button, input, textarea {
     --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
     --HEADER-COLOR: white;
     --HEADER-BGCOLOR: black;
-    --NAV-COLOR: white;
+    --NAV-COLOR: #FFF;
     --HERO-BGCOLOR: rgba(51,178,51, 0.75);
     --HERO-COLOR: white;
 
     /* Standard Padding */
     --PADDING-TB: 0.25em;
     --PADDING-SIDE: 2.5%;
+
+    /* BORDERS */
+    --BORDERS: 1px solid var(--BORDER-COLOR);
+    --BORDER-RADIUS: 15px;
 
     /* Standard Margin */
     --MARGIN: clamp(1em, 2.5vh, 1.5em);
@@ -171,4 +175,145 @@ a:active {
         top: 20px;
         transform: scaleY(1);
     }
+}
+
+/* Footer */
+.footer {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    text-align: center;
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+}
+
+/* Main */
+.main {
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+}
+
+.main__article {
+    scroll-margin-top: 6.5rem;
+    margin: var(--MARGIN);
+}
+
+.main__article:first-child {
+    margin-top: 1em;
+}
+
+.main__article:last-child {
+    min-height: calc(100vh - 20rem);
+}
+
+/* Trivia */
+
+.about__trivia {
+    margin: var(--MARGIN);
+}
+
+.about__trivia-answer {
+    margin-top: 1em;
+}
+
+/* Contact */
+
+.contact__h2 {
+    margin: 0;
+}
+
+.contact__fieldset {
+    border: none;
+}
+
+.contact__label, .contact__input {
+    display: block;
+    margin: 0.5em;
+    font-weight: bolder;
+}
+
+.contact__input, .contact__textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: var(--BORDER-RADIUS);
+    border-width: 1.5px
+}
+
+.contact__textarea {
+    margin-top: 0;
+}
+
+.contact__button {
+    background-color: var(--HIGHLIGHT-COLOR);
+    color: white;
+    border-radius: var(--BORDER-RADIUS);
+    padding: 0.5em;
+    margin-left: 0.5em;
+}
+
+/* Dont create tables with div elements! */
+/* display: contents -> causes element's children to appear as if they were 
+direct children of the element's parents. */
+
+/* Menu */
+thead, tbody, tfoot, tr {
+    display: contents;
+}
+
+.menu__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "hd1 hd2 hd3"
+        "cr cr1 cr1p"
+        "cr cr2 cr2p"
+        "cr cr3 cr3p"
+        "sf sf1 sf1p"
+        "sf sf2 sf2p"
+        "sf sf3 sf3p"
+        "cs cs cs";
+    margin: 0.1em;
+    margin-bottom: 1em;
+}
+
+.menu__cr {
+    grid-area: cr;
+}
+
+.menu__sf {
+    grid-area: sf;
+}
+
+.menu__cs {
+    grid-area: cs;
+}
+
+.menu__cr, .menu__sf, .menu__cs {
+    font-weight: bold;
+    color: var(--HIGHLIGHT-COLOR);
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.menu__header {
+    font-weight: bolder;
+}
+.menu__header, .menu__item {
+    border: medium ridge var(--BORDER-COLOR);
+    width: 100%;
+    padding: 1em;
+
+}
+
+.menu__item {
+    display: grid;
+    place-content: center;
+}
+
+thead th:first-child {
+    border-top-left-radius: 15px;
+}
+
+tfoot td {
+    border-bottom-left-radius: 15px;
 }
